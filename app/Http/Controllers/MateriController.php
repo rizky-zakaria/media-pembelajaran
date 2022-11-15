@@ -80,7 +80,11 @@ class MateriController extends Controller
         $modul = $this->modul;
         $materi = Materi::find($id);
         $data = DetailMateri::where('materi_id', $id)->get();
-        return view('materi.show', compact('data', 'materi', 'modul'));
+        if (isset($data->id)) {
+            return view('materi.show', compact('data', 'materi', 'modul'));
+        } else {
+            return redirect(url('materi/detail-materi/create/' . $id));
+        }
     }
 
     public function update_status($id)
@@ -115,6 +119,7 @@ class MateriController extends Controller
     {
         $modul = $this->modul;
         $data = Materi::find($id);
+
         return view('detail_materi.create', compact('data', 'modul'));
     }
 

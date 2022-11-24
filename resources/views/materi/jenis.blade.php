@@ -12,9 +12,10 @@
                         @endif
                     </div>
                     <div class="card-body text-center">
-                        <a href="{{ url('materi/video') }}" class="btn btn-danger" style="width: 150px"> <b>VIDEO </b> <i
+                        <a href="{{ url('materi/video') }}" class="btn btn-danger" style="width: 200px"> <b>VIDEO </b> <i
                                 class="fas fa-play"></i></a><br>
-                        <a href="{{ url('materi/teks') }}" class="btn btn-primary mt-3" style="width: 150px"> <b>TEKS </b>
+                        <a href="{{ url('materi/teks') }}" class="btn btn-primary mt-3" style="width: 200px"> <b>TULISAN
+                                MATERI </b>
                             <i class="fas fa-file"></i></a>
                     </div>
                 </div>

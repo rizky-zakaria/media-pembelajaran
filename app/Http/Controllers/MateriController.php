@@ -32,14 +32,24 @@ class MateriController extends Controller
 
     public function video()
     {
+        // $modul = $this->modul;
+        // if (Auth::user()->role === 'guru') {
+        //     $data = Materi::where('user_id', Auth::user()->id)->get();
+        // } else {
+        //     $data = Materi::all();
+        // }
+        // $jenis = 'video';
+        // return view('materi.index', compact('modul', 'data', 'jenis'));
         $modul = $this->modul;
-        if (Auth::user()->role === 'guru') {
-            $data = Materi::where('user_id', Auth::user()->id)->get();
-        } else {
-            $data = Materi::all();
-        }
+        $materi = Materi::find(1);
+        $data = DetailMateri::where('materi_id', 1)->get();
         $jenis = 'video';
-        return view('materi.index', compact('modul', 'data', 'jenis'));
+        return view('detail_materi.show', compact(
+            'data',
+            'modul',
+            'materi',
+            'jenis'
+        ));
     }
 
     public function detail_video($id)

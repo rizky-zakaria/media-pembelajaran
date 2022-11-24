@@ -10,10 +10,12 @@
                         <a href="{{ url('kuis/open/' . $materi->id) }}" class="btn btn-primary float-right">Soal</a> --}}
                     </div>
                     <div class="card-body">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UE2KeQnOWW4"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        @foreach ($data as $item)
+                            <iframe width="560" height="315" src="{{ $item->video }}" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        @endforeach
                     </div>
                 </div>
             </div>

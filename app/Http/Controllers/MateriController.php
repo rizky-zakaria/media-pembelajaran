@@ -42,9 +42,9 @@ class MateriController extends Controller
         // return view('materi.index', compact('modul', 'data', 'jenis'));
         $modul = $this->modul;
         $materi = Materi::find(1);
-        $data = DetailMateri::where('materi_id', 1)->get();
+        $data = DetailMateri::all();
         $jenis = 'video';
-        return view('detail_materi.show', compact(
+        return view('materi.video', compact(
             'data',
             'modul',
             'materi',

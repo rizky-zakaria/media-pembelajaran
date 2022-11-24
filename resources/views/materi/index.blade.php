@@ -51,8 +51,13 @@
                                                 <a href="{{ url('materi/close/' . $item->id) }}"
                                                     class="btn btn-sm btn-secondary"><i class="fa fa-file"></i></a>
                                             @else
-                                                <a href="{{ url('materi/open/' . $item->id) }}"
-                                                    class="btn btn-sm btn-secondary"><i class="fa fa-file"></i></a>
+                                                @if ($jenis === 'video')
+                                                    <a href="{{ url('materi/open/video/' . $item->id) }}"
+                                                        class="btn btn-sm btn-secondary"><i class="fa fa-file"></i></a>
+                                                @else
+                                                    <a href="{{ url('materi/open/teks/' . $item->id) }}"
+                                                        class="btn btn-sm btn-secondary"><i class="fa fa-file"></i></a>
+                                                @endif
                                             @endif
                                         </td>
                                     </tr>

@@ -25,12 +25,15 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('materi/video', [MateriController::class, 'video']);
+    Route::get('materi/teks', [MateriController::class, 'teks']);
     Route::resource('siswa', SiswaController::class);
     Route::resource('kuis', KuisController::class);
     Route::resource('materi', MateriController::class);
     Route::resource('hasil', HasilController::class);
     Route::get('materi/detail-materi/create/{id}', [MateriController::class, 'create_detail']);
-    Route::get('materi/open/{id}', [MateriController::class, 'open']);
+    Route::get('materi/open/video/{id}', [MateriController::class, 'detail_video']);
+    Route::get('materi/open/teks/{id}', [MateriController::class, 'detail_teks']);
     Route::get('materi/close/{id}', [MateriController::class, 'close']);
     Route::get('materi/detail-destroy/{id}', [MateriController::class, 'detail_destroy']);
     Route::get('materi/update-status/{id}', [MateriController::class, 'update_status']);

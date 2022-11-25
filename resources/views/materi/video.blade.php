@@ -11,10 +11,12 @@
                     </div>
                     <div class="card-body">
                         @foreach ($data as $item)
-                            <iframe width="560" height="315" src="{{ $item->video }}" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            @if ($item->video !== '-')
+                                <iframe width="560" height="315" src="{{ $item->video }}" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            @endif
                         @endforeach
                     </div>
                 </div>
